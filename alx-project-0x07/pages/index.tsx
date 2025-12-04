@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+
 const Home: React.FC = () => {
   const handleGenerateImage = async () => {
     console.log("Generating Images")
