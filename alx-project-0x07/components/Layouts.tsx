@@ -1,25 +1,17 @@
+import { ReactComponentProps } from "@/interfaces";
+import Footer from "./Footer"
+import Header from "./Header"
 
-import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-
-type LayoutProps = {
-  children: React.ReactNode;
-};
-
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<ReactComponentProps> = ({ children }) => {
   return (
     <>
       <Header />
-      <main className="min-h-screen">{children}</main>
+      <main className="min-h-screen">
+        {children}
+      </main>
       <Footer />
     </>
-  );
-};
+  )
+}
 
 export default Layout;
-
-
-
-
-
