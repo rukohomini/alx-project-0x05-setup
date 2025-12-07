@@ -19,14 +19,15 @@ const useFetchData = <T, R>() => {
         }
       });
 
-      if (!resp.ok) {
+      if (!resp.ok)
+      {
         throw new Error('Failed to fetch data');
       }
 
       const result = await resp.json()
       setResponseData(result)
       setGeneratedImages((prev) => [...prev, { imageUrl: result?.message, prompt: body?.prompt }])
-    } catch (err) {
+        } catch (err) {
       setError((err as Error).message)
     } finally {
       setIsLoading(false)
@@ -41,5 +42,6 @@ const useFetchData = <T, R>() => {
     generatedImages
   }
 }
+
 
 export default useFetchData;
